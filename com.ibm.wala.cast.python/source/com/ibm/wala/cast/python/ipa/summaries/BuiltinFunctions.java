@@ -28,7 +28,7 @@ import com.ibm.wala.types.TypeName;
 import com.ibm.wala.types.TypeReference;
 import com.ibm.wala.types.annotations.Annotation;
 import com.ibm.wala.util.collections.HashMapFactory;
-import com.ibm.wala.util.strings.Atom;
+import com.ibm.wala.core.util.strings.Atom;
 
 public class BuiltinFunctions {
 

@@ -52,7 +52,7 @@ import com.ibm.wala.ipa.summaries.BypassClassTargetSelector;
 import com.ibm.wala.ipa.summaries.BypassMethodTargetSelector;
 import com.ibm.wala.ipa.summaries.BypassSyntheticClassLoader;
 import com.ibm.wala.ipa.summaries.XMLMethodSummaryReader;
-import com.ibm.wala.shrikeBT.Constants;
+import com.ibm.wala.shrike.shrikeBT.Constants;
 import com.ibm.wala.ssa.IRFactory;
 import com.ibm.wala.ssa.SSAOptions;
 import com.ibm.wala.ssa.SSAOptions.DefaultValues;
@@ -67,7 +67,7 @@ import com.ibm.wala.util.WalaException;
 import com.ibm.wala.util.WalaRuntimeException;
 import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.HashSetFactory;
-import com.ibm.wala.util.strings.Atom;
+import com.ibm.wala.core.util.strings.Atom;
 
 public abstract class PythonAnalysisEngine<T>
 		extends AbstractAnalysisEngine<InstanceKey, PythonSSAPropagationCallGraphBuilder, T> {

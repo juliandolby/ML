@@ -46,7 +46,7 @@ import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.Pair;
 import com.ibm.wala.util.intset.IntSetUtil;
 import com.ibm.wala.util.intset.MutableIntSet;
-import com.ibm.wala.util.strings.Atom;
+import com.ibm.wala.core.util.strings.Atom;
 
 public class PythonSSAPropagationCallGraphBuilder extends AstSSAPropagationCallGraphBuilder {
 

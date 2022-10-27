@@ -3,6 +3,7 @@ package com.ibm.wala.cast.python.loader;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Set;
 
 import com.ibm.wala.cast.ir.translator.AstTranslator.AstLexicalInformation;
 import com.ibm.wala.cast.ir.translator.AstTranslator.WalkContext;
@@ -30,6 +31,7 @@ import com.ibm.wala.classLoader.IClassLoader;
 import com.ibm.wala.classLoader.IField;
 import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.classLoader.Language;
+import com.ibm.wala.classLoader.ModuleEntry;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.ssa.SSAInstructionFactory;
@@ -41,7 +43,8 @@ import com.ibm.wala.types.TypeName;
 import com.ibm.wala.types.TypeReference;
 import com.ibm.wala.types.annotations.Annotation;
 import com.ibm.wala.util.collections.HashSetFactory;
-import com.ibm.wala.util.strings.Atom;
+import com.ibm.wala.util.collections.Pair;
+import com.ibm.wala.core.util.strings.Atom;
 
 public abstract class PythonLoader extends CAstAbstractModuleLoader {
 
@@ -144,7 +147,7 @@ public abstract class PythonLoader extends CAstAbstractModuleLoader {
 	}
 
 	@Override
-	protected TranslatorToIR initTranslator() {
+	protected TranslatorToIR initTranslator(Set<Pair<CAstEntity, ModuleEntry>> topLevelEntities) {
 		return new PythonCAstToIRTranslator(this);
 	}
 

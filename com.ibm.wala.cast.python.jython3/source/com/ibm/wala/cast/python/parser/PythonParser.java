@@ -129,7 +129,7 @@ import com.ibm.wala.types.TypeReference;
 import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.HashSetFactory;
 import com.ibm.wala.util.collections.ReverseIterator;
-import com.ibm.wala.util.warnings.Warning;
+import com.ibm.wala.core.util.warnings.Warning;
 
 abstract public class PythonParser<T> extends AbstractParser<T> implements TranslatorToCAst {
 

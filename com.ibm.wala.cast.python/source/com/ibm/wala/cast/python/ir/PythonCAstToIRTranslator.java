@@ -46,9 +46,9 @@ import com.ibm.wala.classLoader.CallSiteReference;
 import com.ibm.wala.classLoader.IClass;
 import com.ibm.wala.classLoader.IClassLoader;
 import com.ibm.wala.classLoader.NewSiteReference;
-import com.ibm.wala.shrikeBT.IBinaryOpInstruction;
-import com.ibm.wala.shrikeBT.IBinaryOpInstruction.IOperator;
-import com.ibm.wala.shrikeBT.IInvokeInstruction.Dispatch;
+import com.ibm.wala.shrike.shrikeBT.IBinaryOpInstruction;
+import com.ibm.wala.shrike.shrikeBT.IBinaryOpInstruction.IOperator;
+import com.ibm.wala.shrike.shrikeBT.IInvokeInstruction.Dispatch;
 import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.ssa.SymbolTable;
 import com.ibm.wala.types.FieldReference;
@@ -58,7 +58,7 @@ import com.ibm.wala.types.TypeReference;
 import com.ibm.wala.util.collections.HashMapFactory;
 import com.ibm.wala.util.collections.HashSetFactory;
 import com.ibm.wala.util.collections.Pair;
-import com.ibm.wala.util.strings.Atom;
+import com.ibm.wala.core.util.strings.Atom;
 
 public class PythonCAstToIRTranslator extends AstTranslator {
 
