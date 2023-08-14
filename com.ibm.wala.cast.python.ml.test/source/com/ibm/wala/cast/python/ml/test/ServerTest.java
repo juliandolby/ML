@@ -68,7 +68,7 @@ public class ServerTest {
 
 	@Test
 	public void trivialClientStreams() throws IOException, InterruptedException, ExecutionException, ClassHierarchyException, IllegalArgumentException, CancelException, URISyntaxException {		
-		assumeThat("not running on Travis CI", System.getenv("TRAVIS"), nullValue());
+	    //		assumeThat("not running on Travis CI", System.getenv("TRAVIS"), nullValue());
 		
 		PipedInputStream clientIn = new PipedInputStream();
 	    PipedOutputStream serverOut = new PipedOutputStream(clientIn);
