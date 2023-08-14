@@ -13,6 +13,7 @@ package com.ibm.wala.cast.python.parser;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.net.URL;
 
@@ -46,7 +47,7 @@ public class PythonFileParser extends PythonParser<File> {
 		PythonParser<File> p = new PythonFileParser(new File(args[0]), new CAstTypeDictionaryImpl<String>());
 		CAstEntity script = p.translateToCAst();
 		System.err.println(script);
-		System.err.println(CAstPrinter.print(script));
+		CAstPrinter.printTo(script, new PrintWriter(System.out));
 	}
 
 	@Override

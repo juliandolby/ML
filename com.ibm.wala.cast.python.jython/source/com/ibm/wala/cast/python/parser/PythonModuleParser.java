@@ -12,6 +12,7 @@ package com.ibm.wala.cast.python.parser;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.net.URL;
 
@@ -53,7 +54,7 @@ public class PythonModuleParser extends PythonParser<ModuleEntry> {
 		PythonParser<ModuleEntry> p = new PythonModuleParser(new SourceURLModule(url), new CAstTypeDictionaryImpl<String>());
 		CAstEntity script = p.translateToCAst();
 		System.err.println(script);
-		System.err.println(CAstPrinter.print(script));
+		CAstPrinter.printTo(script, new PrintWriter(System.out));
 	}
 
 	@Override
