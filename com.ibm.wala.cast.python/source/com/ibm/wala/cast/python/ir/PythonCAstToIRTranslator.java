@@ -587,7 +587,8 @@ public class PythonCAstToIRTranslator extends AstTranslator {
 				Symbol ls = c.currentScope().lookup(name);
 		    
 				int rvi = c.currentScope().allocateTempValue();
-				int idx = c.currentScope().getConstantValue(i-1);
+				Position p = c.top().getSourceMap().getPosition(n);
+				int idx = c.currentScope().getConstantValue(i-1, p);
 				c.cfg().addInstruction(Python.instructionFactory().PropertyRead(c.cfg().getCurrentInstruction(), rvi, rval, idx));
 		    
 				c.setValue(n, rvi);
