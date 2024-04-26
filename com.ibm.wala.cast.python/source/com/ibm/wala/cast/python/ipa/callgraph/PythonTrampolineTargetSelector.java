@@ -65,10 +65,10 @@ public class PythonTrampolineTargetSelector implements MethodTargetSelector {
 					x.addStatement(PythonLanguage.Python.instructionFactory().GetInstruction(1, v1, 1, FieldReference.findOrCreate(PythonTypes.Root, Atom.findOrCreateUnicodeAtom("$self"), PythonTypes.Root)));
 
 					int i = 0;
-					int[] params = new int[ Math.max(2, call.getNumberOfPositionalParameters()) ];
+					int[] params = new int[ Math.max(2, call.getNumberOfPositionalParameters()+1) ];
 					params[i++] = v0;
 					params[i++] = v1;
-					for(int j = 1; j < call.getNumberOfPositionalParameters()-1; j++) {
+					for(int j = 1; j < call.getNumberOfPositionalParameters(); j++) {
 						params[i++] = j+1;
 					}
 
