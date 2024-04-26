@@ -408,7 +408,9 @@ public class PythonCAstToIRTranslator extends AstTranslator {
 	
 	    doLocalWrite(code, n.getType().getName(), type, v);
 	    doGlobalWrite(code, fnName, PythonTypes.Root, v);
-	    
+	    FieldReference fnField = FieldReference.findOrCreate(PythonTypes.Root, Atom.findOrCreateUnicodeAtom(n.getType().getName()), PythonTypes.Root);
+	    context.cfg().addInstruction(Python.instructionFactory().PutInstruction(context.cfg().getCurrentInstruction(), 1, v, fnField));
+	   
 	    if (! this.entity2ExposedNames.containsKey(context.top())) {
 	    	this.entity2ExposedNames.put(context.top(), HashSetFactory.make());
 	    }
